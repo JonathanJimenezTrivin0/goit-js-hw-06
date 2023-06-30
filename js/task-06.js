@@ -5,14 +5,10 @@ input.addEventListener("focus", (e) => {
 });
 
 input.addEventListener("blur", (e) => {
-  if (e.target.value.length == "6") {
+  if (e.target.value.length === Number(input.dataset.length)) {
     e.target.style = "border-color: #4caf50";
     alert("Agreed Access");
-  }
-});
-
-input.addEventListener("blur", (e) => {
-  if (e.target.value.length < "6") {
+  } else {
     e.target.style = "border-color: #f44336";
     alert("Please enter 6 symbols");
   }
